@@ -1,0 +1,1192 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins';
+}
+header
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 100px;
+	z-index: 10000;
+	transition: 0.5s;
+	background-color: black;
+}
+header .logo
+{
+	position: relative;
+	font-weight: 700;
+	color: #fff;
+	text-decoration: none;
+	font-size: 2em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: 0.6s;
+	top: 4px;
+}
+
+
+#toggle
+{
+	position: sticky;
+	top:16;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;	
+}
+
+#toggle:before
+{
+	content: '';
+	position: absolute;
+	top: 7px;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+}
+
+#toggle:after
+{
+	content: '';
+	position: absolute;
+	bottom: 7px;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+}
+
+.banner.active header #toggle:before
+{
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.banner.active header #toggle:after
+{
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.banner
+{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	padding: 100px;
+	background: url(bg.png);
+	filter: contrast(150%);
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	transition: 0.8s;
+	z-index: 2;
+}
+
+.banner.active
+{
+	transform: translateX(-400px);
+}
+
+#navigation
+{
+	position: fixed;
+	top:0;
+	right: 0;
+	width: 400px;
+	height: 100vh;
+	background: #40c3ff;
+	z-index: 1;
+	display: grid;
+	place-items:center;
+	transition: 0.5s;
+}
+
+/*=============================================
+=           Sessão active-menu                =
+=============================================*/
+
+
+#navigation.active
+{
+	right: 0;
+}
+
+#about.active
+{
+	transform: translateX(-400px);
+}
+
+#header.active
+{
+	transform: translateX(-400px);
+}
+
+#tech.active,
+#serv.active,
+#know.active,
+#ass.active,
+#contact.active,
+#aboutb.active,
+#foo.active
+{
+	transform: translateX(-400px);
+}
+
+#tech,
+#serv,
+#know,
+#ass,
+#contact,
+#aboutb,
+#foo,
+#about,
+#header
+{
+	transition: 0.8s;
+	
+}
+
+/*=====  Fim da Sessão active-menu ======*/
+
+
+#navigation ul
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+#navigation ul li
+{
+	list-style: none;
+}
+
+#navigation ul li a
+{
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 2em;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.content
+{
+	max-width: 600px;
+}
+
+.content h2
+{
+	color: #fff;
+	font-size: 2.5em;
+}
+
+.content h2 span
+{
+	color: #40c3ff;
+	font-size: 1.2em;
+}
+
+.content p
+{
+	font-size: 1.2em;
+	color: #fff;
+	font-weight: 300;
+}
+
+.content a:hover
+{
+	background: darkred;
+	color: white;
+}
+
+.content a
+{
+	position: relative;
+	display: inline-block;
+	margin-top: 20px;
+	background: red;
+	color: white;
+	padding: 10px 30px;
+	text-decoration: none;
+	font-size: 1.2em;
+	font-weight: 500;
+}
+
+.sci
+{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	right: 100px;
+}
+
+.sci li
+{
+	list-style: none;
+}
+
+.sci li a 
+{
+	position: relative;
+	display: grid;
+	place-items: center;
+	width: 50px;
+	height: 50px;
+	text-decoration: none;
+	border: 1px solid #fff;
+	margin: 10px 0 0;
+}
+
+.sci li a:hover
+{
+	background: #fff;
+}
+
+.sci li a img
+{
+	max-width: 37px;
+	filter:invert(1);
+	mix-blend-mode: difference;
+}
+
+/*=============================================
+=                 Loader                      =
+=============================================*/
+
+
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000000000000000;
+}
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #3498db;
+  animation: spin 2s linear infinite;
+  z-index: 1001;
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #e74c3c;
+  animation: spin 3s linear infinite;
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #f9c922;
+  animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0%   { 
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0%   { 
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #222222;
+  z-index: 1000;
+  transform: translateX(0);
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);  
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  transform: translateX(100%); 
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader {
+  opacity: 0; 
+  transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+
+/*=============================================
+=            Sessão sobre mim                 =
+=============================================*/
+
+.about
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	z-index: 2;
+	transition: 0.5s;
+}
+
+.about .contentBox
+{
+	background: #162c3b;
+	padding: 100px;
+	width: 50%;
+}
+
+.heading
+{
+	color: #fff;
+	font-size: 30px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+}
+
+.text
+{
+	color: #fff;
+	font-size: 16px;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+.about .imgBox
+{
+	background: url(Java-Capa.png);
+	width: 50%;
+	filter: saturate(80%);
+	background-size: cover;
+	background-position: center;
+}
+
+
+/*=======================================
+=            Sessão Serviços            =
+=======================================*/
+
+
+.services
+{
+	background: linear-gradient(#12222d 60%, #3f8ffc 40%);
+	padding: 100px;
+	text-align: center;
+	z-index: 2;
+	width: 100%;
+	position: relative;
+}
+
+.services .container
+{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 60px;
+}
+
+.services .container .serviceBox
+{
+	position: relative;
+	background: #fff;
+	width: 350px;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.services .container .serviceBox img
+{
+	max-width: 100px;
+
+}
+
+.services .container .serviceBox h2
+{
+	font-weight: 500;
+	font-size: 20px;
+	letter-spacing:1px;
+	
+}
+
+
+/*=============================================
+=            Sessão Tecnologia               =
+=============================================*/
+
+
+.technology
+{
+	background: #3f8ffc;
+	width: 100%;
+	padding: 100px;
+	padding-top: 300px;
+	margin-top:-300px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1;
+	position: relative;
+}
+
+.technology .contentBox
+{
+	max-width: 800px;
+}
+
+.technology .imgBox
+{
+	max-width: 250px;
+}
+
+.technology .imgBox img
+{
+	max-width: 100%;
+}
+
+/*=============================================
+=            Sessão Conhecimentos             =
+=============================================*/
+
+.knowlodge
+{
+	background: #162c3b;
+	padding: 4%;
+	text-align: center;
+	z-index: 2;
+	width: 100%;
+	position: relative;
+}
+
+.knowlodge .imgBox
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 40px;
+}
+
+.knowlodge .imgBox img
+{
+	max-width: 200px;
+	margin: 20px;
+	opacity: 0.25;
+	cursor: pointer;
+}
+
+.knowlodge .imgBox img:hover
+{
+	opacity: 1;
+}
+
+.container
+{
+	width: 100%;
+	margin: 20px auto;
+	columns: 4;
+	column-gap: 40px;
+	font-family: 'Poppins', sans-serif;
+}
+
+.container .box
+{
+	width: 100%;
+	margin: 0 0 20px;
+	background: #fff;
+	overflow: hidden;
+	break-inside: avoid;
+
+}
+
+.container .box img
+{
+	max-width: 100%;
+	padding: 3% 3% 0;
+}
+
+.container .box h2
+{
+	margin: 0px 0 0;
+	padding: 4px;
+	font-size: 1.5em;
+}
+
+.container .box p
+{
+	margin: 0;
+	padding: 4px 9px 4px;
+	font-size: 1em;
+
+}
+
+.box a {
+    position: relative;
+    display: inline-block;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    background: green;
+    color: white;
+    padding: 8px 21px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.box a:hover
+{
+	background: red;
+	color: white;
+}
+
+
+/*=============================================
+=            Testemunhos?                     =
+=============================================*/
+
+.testimonials
+{
+	position: relative;
+	padding: 100px;
+	padding-top: 40px;
+	background: #12222d;
+	text-align: center;
+	z-index: 2;
+}
+
+.testimonials .container
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 40px;
+	flex-wrap: wrap;
+}
+
+.testimonials .container .contentBox
+{
+	background: #fff;
+	padding: 60px 50px;
+	width: 550px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: left;
+}
+
+.testimonials .container .contentBox p
+{
+	font-style: italic;
+}
+
+.testimonials .container .contentBox h3
+{
+	width: 100%;
+	text-align: end;
+	font-weight: 500;
+	color: #3f8ffc;
+}
+
+/*=============================================
+=            Sessão Contato                   =
+=============================================*/
+
+.contact
+{
+	z-index: 2;
+	position: relative;
+	padding: 100px;
+	background: #162c3b;
+	text-align: center;
+}
+
+.imgBox2
+{
+	background: url(contact.jpg);
+	background-size: cover;
+	background-position: center;
+	width: 50%;s
+}
+
+.redbg
+{
+	background: url(red.jpg) !important; 
+	background-size: cover;
+	background-position: center;	
+}
+
+.form .inputBox
+{
+	margin-bottom: 40px;
+}
+
+.form .inputBox input
+{
+	width: 100%;
+	background: transparent;
+	box-shadow: none;
+	border:none;
+	outline: none;
+	padding: 10px 0;
+	font-size: 18px;
+	font-weight: 300;
+	color: #fff;
+	border-bottom: 2px solid #fff;
+}
+
+.form .inputBox input::placeholder
+{
+	color: #fff;
+}
+
+.form .inputBox textarea
+{
+	width: 100%;
+	background: transparent;
+	box-shadow: none;
+	border:none;
+	outline: none;
+	padding: 10px 0;
+	font-size: 18px;
+	font-weight: 300;
+	color: #fff;
+	min-height: 150px;
+	border-bottom: 2px solid #fff;
+}
+
+.form .inputBox textarea::placeholder
+{
+	color: #fff;
+}
+
+.form .inputBox input[type="submit"]
+{
+	width: 150px;
+	background: #fff;
+	color: #111;
+	cursor: pointer;
+	font-weight: 400px;
+}
+
+.aboutb
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	z-index: 2;
+	transition: 0.5s;
+}
+
+.aboutb .contentBox
+{
+	background: #162c3b;
+	padding: 100px;
+	width: 50%;
+}
+
+.heading
+{
+	color: #fff;
+	font-size: 30px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+	padding: 2%;
+}
+
+.text
+{
+	color: #fff;
+	font-size: 16px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	padding: 2%;
+}
+
+.aboutb .imgBox
+{
+	background: url(window.jpg);
+	width: 50%;
+	background-size: cover;
+	background-position: center;
+}
+
+/*=============================================
+=                  Footer                     =
+=============================================*/
+
+.footer
+{
+	background: #162c3b;
+	padding: 20px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 2;
+	position: relative;
+}
+
+.footer p a
+{
+	
+	color: white;
+}
+
+.footer ul
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer ul li
+{
+	list-style: none;
+}
+
+.footer ul li a
+{
+	text-decoration: none;
+	display: inline-block;
+	margin: 0 10px;
+	border: 1px solid #fff;
+	height: 45px;
+    width: 45px;
+}
+
+.footer ul li a:hover
+{
+	background: #fff;
+}
+
+.footer ul li a img
+{
+	filter: invert(1);
+	max-width: 43px;
+	mix-blend-mode: difference;
+	padding: 4px;
+
+}
+
+
+/*=============================================
+=            Design Responsivo          =
+=============================================*/
+
+
+/* ------- 1471px ------ */
+
+@media (max-width:1471px)
+{
+	.sci
+	{
+		position: absolute;
+		bottom: 50px;
+		right: initial;
+		flex-direction: row;
+	}
+	.sci li a
+	{
+		margin: initial;
+		margin-right: 10px;
+	}
+}
+
+/* ------- 1321px ------ */
+
+@media (max-width: 1321px)
+{
+	.testimonials .container .contentBox {
+	    background: #fff;
+	    padding: 60px 40px;
+	    width: 550px;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    text-align: left;
+	    margin-bottom: 40px;
+	}
+
+	.testimonials .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    padding-left: 25%;
+    padding-right: 24%;
+}
+}
+
+/* ------- 1276px ------ */
+
+@media (max-width: 1276px)
+{
+	.services
+	{
+		padding: 50px;
+	}
+
+	.services .container
+	{
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	.services .container .serviceBox
+	{
+		margin: 20px;
+		width: 300px;
+		height: 350px;
+	}
+
+	.knowlodge
+	{
+		padding: 1%;
+	}
+
+	.knowlodge .imgBox
+	{
+		justify-content: center;
+	}
+
+
+	.footer
+	{
+		flex-direction: column;
+	}
+
+	.container {
+		columns: 3;
+		width: calc(100% - 40px);
+		box-sizing: border-box;
+		padding: 20px 20px 0px 0;
+	}
+}
+
+@media (max-width: 1069px){
+.testimonials .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    padding-left: 25%;
+    padding-right: 24%;
+}
+}
+
+
+/* ------- 991px ------ */
+
+@media (max-width: 991px)
+{
+	.about
+	{
+		flex-direction: column;
+	}
+
+	.about .contentBox,
+	.about .imgBox
+	{
+		width: 100%;
+		padding: 50px;
+		min-height: 400px;
+		text-align: center;
+	}
+
+	.services
+	{
+		padding: 50px 50px 0 50px;
+	}
+
+	.services .container
+	{
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	.services .container .serviceBox
+	{
+		margin: 20px;
+		width: 300px;
+		height: 350px;
+	}
+
+	.technology
+	{
+		padding: 50px;
+		padding-top: 300px;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.technology .contentBox 
+	{
+   		max-width: 800px;
+    	margin-bottom: 40px;
+	}
+
+	.testimonials
+	{
+		padding: 50px !important;
+	}
+
+	.testimonials .container .contentBox {
+	    background: #fff;
+	    padding: 60px 40px;
+	    width: 550px;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    text-align: left;
+	    margin-bottom: 40px;
+}
+
+	.testimonials .container .contentBox:last-child
+	{
+		margin-bottom: 0px;
+	}
+
+	.contact
+	{
+		padding: 50px;
+	}
+
+	.aboutb
+	{
+		flex-direction: column;
+	}
+
+	.aboutb .contentBox,
+	.aboutb .imgBox
+	{
+		width: 100%;
+		padding: 50px;
+		min-height: 400px;
+		text-align: center;
+		padding-bottom: 10px;
+	}
+
+	.footer
+	{
+		padding: 20px 50px;
+		flex-direction: column-reverse;
+		text-align: center;
+	}
+
+	.footer ul li a
+	{
+		height: 46px;
+    	width: 52px;
+	}
+
+	.footer ul li a img 
+	{
+		height: 40px;
+	}
+
+	.footer ul 
+	{
+		margin-bottom: 30px;
+		margin-top: 10px;
+	}
+
+	.testimonials .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    padding-left: 25%;
+    padding-right: 24%;
+	}
+
+	.container
+	{
+		columns: 2;
+	}
+
+}
+
+/* ------- 767px ------ */
+
+@media (max-width: 767px)
+{
+	header
+	{
+		padding: 20px 50px;
+	}
+	.banner
+	{
+		padding: 100px 50px 150px;
+	}
+	.banner h2
+	{
+		font-size: 1.8em;
+	}
+	.banner .content p,
+	.banner .content a
+	{
+		font-size: 1em;
+	}
+
+	.banner.active
+	{
+		transform: translateX(-250px);
+	}
+	#navigation
+	{
+		width: 250px;
+	}
+	#navigation ul li a
+	{
+		font-size: 1.5em;
+		margin: 5px 0;
+	}
+	.sci
+	{
+		position: absolute;
+		bottom: 50px;
+		right: initial;
+		flex-direction: row;
+	}
+	.sci li a
+	{
+		margin: initial;
+		margin-right: 10px;
+	}
+
+	/* ----------- HERE, Sessão Responsiva do .active --------------- */
+	
+	#tech.active,
+	#serv.active,
+	#know.active,
+	#ass.active,
+	#contact.active,
+	#aboutb.active,
+	#foo.active,
+	#about.active,
+	#header.active
+	{
+		transform: translateX(-250px);
+	}
+
+	
+
+}
+
+/* ------- 741px ------ */
+
+@media (max-width: 741px)
+{
+	.testimonials .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+.knowlodge {
+    padding: 3%;
+}
+
+.container
+	{
+		columns: 1;
+		width: 100%;
+		padding: 0;
+		margin-top: 5%;
+	}
+
+	.container .box img
+{
+	max-width: 100%;
+	padding: 1% 1% 0;
+}
+}
+
+/* ------- 573px ------ */
+
+@media (max-width: 573px)
+{
+	.testimonials {
+    padding: 26px !important;
+}
+}
+
+/* ------- 487px ------ */
+
+@media (max-width:487px)
+{
+
+	header .logo
+	{
+		font-size: 1.1em;
+	}
+
+}
+
